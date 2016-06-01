@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FormValidation</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="validator.js"></script>
+</head>
+<body>
+<div>
+    <form action="" name="form" id="menu">
+        <fieldset>
+            <legend>User Information</legend>
+            First Name:<br>
+            <input type="text" id="fName" placeholder="enter first name"
+                   onblur="validateName('fName','firstName',1,15)">
+            <span id="firstName"></span><br>
+            Last Name:<br>
+            <input type="text" id="lName" placeholder="enter last name" onblur="validateName('lName','lastName',1,15)">
+            <span id="lastName"></span><br>
+            EGN:<br>
+            <input type="number" id="egn" placeholder="enter egn" onblur="validateEgn('egn','egnId',10)">
+            <span id="egnId"></span><br>
+            Age:<br>
+            <input type="number" id="age" placeholder="enter age" onblur="validateAge('age','ageId',18,118)">
+            <span id="ageId"></span><br>
+            Address:<br>
+            <input type="text" id="addr" placeholder="enter address" onblur="validate('addr','address',1,100)">
+            <span id="address"></span><br>
+            Pass:<br>
+            <input type="password" id="pass" placeholder="enter password" onblur="validate('pass','password',6,100)">
+            <span id="password"></span><br>
+            Confirm password:<br>
+            <input type="password" id="confirmPassword"
+                   onblur="validateConfirm('confirmPassword','pass','confirmPass')">
+            <span id="confirmPass"></span><br>
+            <input type="submit" value="submit">
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>
