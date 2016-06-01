@@ -1,22 +1,10 @@
 /**
  * @author Stanislava Kaukova(sisiivanovva@gmail.com)
  */
-
-function validateName(fieldId, id, min, max) {
-    var field = document.getElementById(fieldId).value;
-
-    if (field.length < min || field.length > max || field.search(/^[a-zA-Z]*$/)) {
-        incorrectValue(id);
-    }
-    else {
-        correctValue(id);
-    }
-}
-
 function validate(fieldId, id, min, max) {
     var field = document.getElementById(fieldId).value;
 
-    if (field.length < min || field.length > max || field.search(/^[a-z0-9]+/)) {
+    if (field.length < min || field.length > max || field.search(/^[a-zA0-Z9]+/)) {
         incorrectValue(id);
     }
     else {
