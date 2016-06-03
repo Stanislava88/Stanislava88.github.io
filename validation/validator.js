@@ -1,52 +1,36 @@
 /**
  * @author Stanislava Kaukova(sisiivanovva@gmail.com)
  */
-function validate(fieldId, id, min, max) {
+
+function validateLength(fieldId, id, minLength, maxLength) {
     var field = document.getElementById(fieldId).value;
 
-    if (field.length < min || field.length > max || field.search(/^[a-zA0-Z9]+/)) {
-        incorrectValue(id);
+    if (field.length < minLength || field.length > maxLength || field.search(/^[a-zA0-Z9]+/)) {
+        document.getElementById(id).innerHTML = "<img src='option-unchecked.png'>The length of " + fieldId + " is not correct";
     }
     else {
-        correctValue(id);
+        document.getElementById(id).innerHTML = "<img src='check.png'style='width: 20px'>";
     }
 }
 
-function validateEgn(fieldId, id, max) {
-    var egn = document.getElementById(fieldId).value;
-
-    if (egn.length != max) {
-        incorrectValue(id);
-    } else {
-        correctValue(id);
-    }
-}
-
-function validateAge(fieldId, id, min, max) {
+function validateRange(fieldId, id, minValue, maxValue) {
     var age = document.getElementById(fieldId).value;
 
-    if (age < min || age > max) {
-        incorrectValue(id);
+    if (age < minValue || age > maxValue) {
+        document.getElementById(id).innerHTML = "<img src='option-unchecked.png'> The valid age are between 18 and 118";
     } else {
-        correctValue(id);
+        document.getElementById(id).innerHTML = "<img src='check.png'style='width: 20px'>";
     }
 }
 
-function validateConfirm(passId1, passId2, id) {
-    var pass1 = document.getElementById(passId1).value;
-    var pass2 = document.getElementById(passId2).value;
+function validateSameness(value1, value2, id) {
+    var value1 = document.getElementById(value1).value;
+    var value2 = document.getElementById(value2).value;
 
-    if (pass1 != pass2) {
-        incorrectValue(id);
+    if (value1 != value2) {
+        document.getElementById(id).innerHTML = "<img src='option-unchecked.png'> The passwords does not match";
     } else {
-        correctValue(id);
+        document.getElementById(id).innerHTML = "<img src='check.png'style='width: 20px'>";
     }
 }
 
-function incorrectValue(id) {
-    return document.getElementById(id).innerHTML = "<img src='option-unchecked.png'>This field is incorrect";
-}
-
-function correctValue(id) {
-    return document.getElementById(id).innerHTML = "<img src='check.png'style='width: 20px'>";
-}
