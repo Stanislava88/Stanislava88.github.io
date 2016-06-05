@@ -2,22 +2,21 @@
  * @author Stanislava Kaukova(sisiivanovva@gmail.com)
  */
 
-function validateLength(fieldId, id, minLength, maxLength) {
+function validateForm(fieldId, id, regex, errorId) {
     var field = document.getElementById(fieldId).value;
 
-    if (field.length < minLength || field.length > maxLength || field.search(/^[a-zA0-Z9]+/)) {
-        document.getElementById(id).innerHTML = "<img src='option-unchecked.png'>The length of " + fieldId + " is not correct";
-    }
-    else {
+    if (!regex.test(field)) {
+        document.getElementById(errorId).setAttribute("style", "inline");
+    } else {
         document.getElementById(id).innerHTML = "<img src='check.png'style='width: 20px'>";
     }
 }
 
-function validateRange(fieldId, id, minValue, maxValue) {
-    var age = document.getElementById(fieldId).value;
+function validateRange(fieldId, id, minValue, maxValue, errorId) {
+    var field = document.getElementById(fieldId).value;
 
-    if (age < minValue || age > maxValue) {
-        document.getElementById(id).innerHTML = "<img src='option-unchecked.png'> The valid age are between 18 and 118";
+    if (field < minValue || field > maxValue) {
+        document.getElementById(errorId).setAttribute("style", "inline");
     } else {
         document.getElementById(id).innerHTML = "<img src='check.png'style='width: 20px'>";
     }
@@ -33,4 +32,3 @@ function validateSameness(value1, value2, id) {
         document.getElementById(id).innerHTML = "<img src='check.png'style='width: 20px'>";
     }
 }
-
