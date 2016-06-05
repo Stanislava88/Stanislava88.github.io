@@ -8,30 +8,50 @@
 </head>
 <body>
 <div>
-    <form action="" name="form" id="menu">
+    <form action="" name="form">
         <fieldset>
             <legend>User Information</legend>
             First Name:<br>
             <input type="text" id="first name" placeholder="enter first name"
-                   onblur="validateLength('first name','id',1,15)"><br>
+                   onblur="validateForm('first name','id',/^[A-Za-z ]{1,15}$/,'errorFName')"><br>
+            <span id="errorFName" class="error"
+                  style="display:none">The name must contain between 1 and 15 letters</span>
+
             Last Name:<br>
             <input type="text" id="last name" placeholder="enter last name"
-                   onblur="validateLength('last name','id',1,15)"><br>
+                   onblur="validateForm('last name','id',/^[A-Za-z ]{1,15}$/,'errorLName')"><br>
+            <span id="errorLName" class="error"
+                  style="display:none">The name must contain between 1 and 15 letters</span>
+
             EGN:<br>
-            <input type="number" id="egn" placeholder="enter egn" onblur="validateLength('egn','id',0,10)"><br>
+            <input type="number" id="egn" placeholder="enter egn"
+                   onblur="validateForm('egn','id',/^[0-9 ]{10}$/,'errorEGN')"><br>
+             <span id="errorEGN" class="error" style="display:none">The egn must contain exactly 10 digits
+            </span>
+
             Age:<br>
-            <input type="number" id="age" placeholder="enter age" onblur="validateRange('age','id',18,118)"><br>
+            <input type="number" id="age" placeholder="enter age"
+                   onblur="validateRange('age','id', 18,118,'errorAge')"><br>
+            <span id="errorAge" class="error" style="display:none">Valid age are between 18 and 118
+            </span>
+
             Address:<br>
             <input type="text" id="address" placeholder="enter address"
-                   onblur="validateLength('address','id',1,100)"><br>
+                   onblur="validateForm('address','id',/^[A-Za-z0-9]{1,100}$/,'errorAddress')"><br>
+              <span id="errorAddress" class="error" style="display:none">The address must contains between 1 to 100 symbols
+            </span>
+
             Password:<br>
             <input type="password" id="password" placeholder="enter password"
-                   onblur="validateLength('password','id',6,100)"><br>
+                   onblur="validateForm('password','id',/^[A-Za-z0-9]{6,18}$/,'errorPass')"><br>
+            <span id="errorPass" class="error" style="display:none">The password
+                must contains between 6 and 18 latin letters and digits
+            </span>
+
             Confirm password:<br>
             <input type="password" id="confirmPassword" placeholder="confirm password"
                    onblur="validateSameness('confirmPassword','password','id')"><br><br>
-            <span id="id"></span><br>
-            <br>
+            <span id="id"></span>
         </fieldset>
     </form>
 </div>
