@@ -3,7 +3,7 @@ fieldset {
     margin: 5px;
 }
 
-div {
+#form {
     width: 30%;
     background-color: #f2f2f2;
     padding: 20px;
@@ -13,4 +13,5 @@ div {
     background-image: url(option-unchecked.png);
     background-repeat: no-repeat;
     padding-left: 20px;
+    display: none;
 }
