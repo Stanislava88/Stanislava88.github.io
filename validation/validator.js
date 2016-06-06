@@ -2,33 +2,31 @@
  * @author Stanislava Kaukova(sisiivanovva@gmail.com)
  */
 
-function validateForm(fieldId, id, regex, errorId) {
-    var field = document.getElementById(fieldId).value;
+function validateMatching(fieldId, regex) {
+    var value = document.getElementById(fieldId).value;
 
-    if (!regex.test(field)) {
-        document.getElementById(errorId).setAttribute("style", "inline");
+    if (!regex.test(value)) {
+        document.getElementById(fieldId + "Error").style.display = 'inline';
+        console.log("error" + fieldId);
     } else {
-        document.getElementById(id).innerHTML = "<img src='check.png'style='width: 20px'>";
+        document.getElementById(fieldId + "Error").style.display = 'none';
     }
 }
 
-function validateRange(fieldId, id, minValue, maxValue, errorId) {
-    var field = document.getElementById(fieldId).value;
+function validateRange(fieldId, minValue, maxValue) {
+    var value = document.getElementById(fieldId).value;
 
-    if (field < minValue || field > maxValue) {
-        document.getElementById(errorId).setAttribute("style", "inline");
+    if (value < minValue || value > maxValue) {
+        document.getElementById(fieldId + "Error").style.display = 'inline';
     } else {
-        document.getElementById(id).innerHTML = "<img src='check.png'style='width: 20px'>";
+        document.getElementById(fieldId + "Error").style.display = 'none';
     }
 }
 
-function validateSameness(value1, value2, id) {
-    var value1 = document.getElementById(value1).value;
-    var value2 = document.getElementById(value2).value;
-
-    if (value1 != value2) {
-        document.getElementById(id).innerHTML = "<img src='option-unchecked.png'> The passwords does not match";
+function validateEquality(id1, id2) {
+    if (document.getElementById(id1).value != document.getElementById(id2).value) {
+        document.getElementById(id1 + "Error").style.display = 'inline';
     } else {
-        document.getElementById(id).innerHTML = "<img src='check.png'style='width: 20px'>";
+        document.getElementById(id1 + "Error").style.display = 'none';
     }
 }
