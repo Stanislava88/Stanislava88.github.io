@@ -1,0 +1,12 @@
+#fractions h1 {
+    color: darkred;
+}
+
+#fraction {
+    border-style: solid;
+    border-color: darkgreen;
+}
+
+p {
+    display: none;
+}
