@@ -1,12 +1,25 @@
-#fractions h1 {
+.fractions h1 {
     color: darkred;
 }
 
-#fraction {
+.fractions #fraction {
     border-style: solid;
     border-color: darkgreen;
 }
 
-p {
+.fractions div {
     display: none;
+}
+
+.error div.error {
+    display: inline;
+}
+
+span {
+    color: red;
+}
+
+.success div.success {
+    color: green;
+    display: inline;
 }
