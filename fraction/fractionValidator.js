@@ -4,7 +4,7 @@
 function isFraction(fieldId) {
     var fraction = document.getElementById(fieldId).value;
 
-    var pattern = new RegExp("^\[0-9]{1,10}([, .][0-9]{1,5})$");
+    var pattern = new RegExp("^\[0-9]{1,10}([,.][0-9]{1,5})$");
     if (!pattern.test(fraction)) {
         document.getElementById("message").innerHTML = "This fraction is not valid!!!".fontcolor('red');
         document.getElementById("fraction").style.borderColor = 'red';
