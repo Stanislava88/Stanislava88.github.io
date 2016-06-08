@@ -7,11 +7,16 @@
     border-color: darkgreen;
 }
 
-.fractions div {
+.error {
     display: none;
 }
 
-.error div.error {
+.success {
+    display: none;
+    color: green;
+}
+
+.invalid .error {
     display: inline;
 }
 
@@ -19,7 +24,6 @@ span {
     color: red;
 }
 
-.success div.success {
-    color: green;
+.valid .success {
     display: inline;
 }
