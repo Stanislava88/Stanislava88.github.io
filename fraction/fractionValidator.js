@@ -6,8 +6,8 @@ function isFraction(fieldId) {
 
     var pattern = new RegExp("^\[0-9]{1,10}([,.][0-9]{1,5})$");
     if (!pattern.test(fraction)) {
-        document.documentElement.className = "error";
+        document.getElementById("message").className = "invalid";
     } else {
-        document.documentElement.className = "success";
+        document.getElementById("message").className = "valid";
     }
 }
